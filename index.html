@@ -1,78 +1,768 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SMK GRAFIKA PGRI PAKIS | Sekolah Grafika & DKV</title>
-  <meta name="description" content="Website resmi SMK GRAFIKA PGRI PAKIS, Kabupaten Malang. Program Desain Komunikasi Visual dan Teknik Grafika.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SMK GRAFIKA VOKASI MANGLIAWAN | Teknik Grafika & DKV</title>
+
+  <meta name="description" content="Website resmi SMK GRAFIKA VOKASI MANGLIAWAN, Kabupaten Malang. Program keahlian Teknik Grafika dan Desain Komunikasi Visual.">
+
+  <meta name="facebook-domain-verification" content="zjezdn0zmz3v8cijdtgksv6y7cdmc">
+
   <link rel="stylesheet" href="style.css">
-  <meta name="facebook-domain-verification" content="zjezdn0zmz3v8cjdtkgsv6y7cdmc">
+
+  <style>
+    :root{
+      --primary:#111827;
+      --secondary:#2563eb;
+      --accent:#f59e0b;
+      --light:#f8fafc;
+      --white:#ffffff;
+      --text:#1e293b;
+      --muted:#64748b;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--light);
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .wrap{
+      width:min(1150px,92%);
+      margin:auto;
+    }
+
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(17,24,39,.97);
+      color:white;
+      box-shadow:0 3px 15px rgba(0,0,0,.15);
+    }
+
+    .nav{
+      min-height:75px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:bold;
+    }
+
+    .logo{
+      width:48px;
+      height:48px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,#2563eb,#7c3aed);
+      color:white;
+      font-size:22px;
+      font-weight:900;
+    }
+
+    .brand small{
+      display:block;
+      color:#cbd5e1;
+      font-size:11px;
+      margin-top:2px;
+    }
+
+    nav{
+      display:flex;
+      gap:22px;
+      align-items:center;
+    }
+
+    nav a{
+      font-size:14px;
+      color:#e5e7eb;
+      transition:.2s;
+    }
+
+    nav a:hover{
+      color:#fbbf24;
+    }
+
+    .menu{
+      display:none;
+      background:none;
+      border:0;
+      color:white;
+      font-size:27px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      color:white;
+      background:
+        radial-gradient(circle at 80% 20%,rgba(37,99,235,.45),transparent 35%),
+        linear-gradient(135deg,#0f172a,#172554 55%,#1e3a8a);
+      padding:90px 0;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      align-items:center;
+      gap:50px;
+    }
+
+    .eyebrow{
+      color:#fbbf24;
+      font-weight:bold;
+      letter-spacing:2px;
+      font-size:13px;
+      margin-bottom:15px;
+    }
+
+    h1{
+      font-size:clamp(38px,5vw,65px);
+      line-height:1.05;
+      margin-bottom:20px;
+    }
+
+    h1 span{
+      color:#60a5fa;
+    }
+
+    .hero p{
+      color:#dbeafe;
+      max-width:700px;
+      font-size:17px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 20px;
+      border-radius:10px;
+      font-weight:bold;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:#2563eb;
+      color:white;
+    }
+
+    .btn-primary:hover{
+      background:#1d4ed8;
+    }
+
+    .btn-ghost{
+      border-color:#64748b;
+      color:white;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.09);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:25px;
+      padding:30px;
+      backdrop-filter:blur(10px);
+    }
+
+    .hero-card h3{
+      margin-bottom:15px;
+    }
+
+    .hero-card div{
+      padding:13px 0;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .hero-card div:last-child{
+      border:0;
+    }
+
+    /* SECTION */
+    section{
+      padding:75px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:45px;
+    }
+
+    .section-title span{
+      color:var(--secondary);
+      font-weight:bold;
+      text-transform:uppercase;
+      font-size:13px;
+      letter-spacing:2px;
+    }
+
+    .section-title h2{
+      font-size:34px;
+      margin-top:8px;
+    }
+
+    .section-title p{
+      max-width:700px;
+      margin:10px auto;
+      color:var(--muted);
+    }
+
+    /* CARDS */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .card{
+      background:white;
+      padding:28px;
+      border-radius:18px;
+      box-shadow:0 8px 30px rgba(15,23,42,.07);
+      border:1px solid #e2e8f0;
+    }
+
+    .icon{
+      width:52px;
+      height:52px;
+      display:grid;
+      place-items:center;
+      background:#eff6ff;
+      color:#2563eb;
+      border-radius:14px;
+      font-size:25px;
+      margin-bottom:18px;
+    }
+
+    .card h3{
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* ABOUT */
+    .about{
+      background:white;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:45px;
+      align-items:center;
+    }
+
+    .about-box{
+      background:#f8fafc;
+      border-left:5px solid #2563eb;
+      padding:25px;
+      border-radius:12px;
+      margin-top:20px;
+    }
+
+    /* INFO */
+    .info{
+      background:#0f172a;
+      color:white;
+    }
+
+    .info .section-title p{
+      color:#94a3b8;
+    }
+
+    .info .card{
+      background:#1e293b;
+      border-color:#334155;
+      color:white;
+    }
+
+    .info .card p{
+      color:#cbd5e1;
+    }
+
+    /* CONTACT */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:25px;
+    }
+
+    .contact-box{
+      background:white;
+      padding:28px;
+      border-radius:18px;
+      border:1px solid #e2e8f0;
+    }
+
+    .contact-box p{
+      margin:10px 0;
+      color:var(--muted);
+    }
+
+    /* FOOTER */
+    footer{
+      background:#020617;
+      color:#cbd5e1;
+      padding:35px 0;
+      text-align:center;
+    }
+
+    footer strong{
+      color:white;
+    }
+
+    .wa{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#22c55e;
+      color:white;
+      font-size:27px;
+      box-shadow:0 8px 25px rgba(0,0,0,.25);
+      z-index:999;
+    }
+
+    /* MOBILE */
+    @media(max-width:800px){
+      nav{
+        display:none;
+        position:absolute;
+        top:75px;
+        left:0;
+        right:0;
+        background:#111827;
+        padding:20px;
+        flex-direction:column;
+      }
+
+      nav.active{
+        display:flex;
+      }
+
+      .menu{
+        display:block;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding:65px 0;
+      }
+
+      section{
+        padding:55px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header class="top">
+
+<header>
   <div class="wrap nav">
-    <a class="brand" href="#"><span class="logo">G</span><span><b>SMK GRAFIKA</b><small>PGRI PAKIS · KABUPATEN MALANG</small></span></a>
-    <button class="menu" aria-label="Menu">☰</button>
-    <nav><a href="#profil">Profil</a><a href="#program">Program</a><a href="#layanan">Layanan</a><a href="#berita">Berita</a><a href="#kontak">Kontak</a></nav>
+
+    <a class="brand" href="#">
+      <span class="logo">G</span>
+      <span>
+        SMK GRAFIKA
+        <small>VOKASI MANGLIAWAN • KABUPATEN MALANG</small>
+      </span>
+    </a>
+
+    <button class="menu" onclick="toggleMenu()">☰</button>
+
+    <nav id="nav">
+      <a href="#profil">Profil</a>
+      <a href="#program">Program</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#berita">Berita</a>
+      <a href="#bkk">BKK</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
   </div>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="wrap hero-grid">
+
     <div>
-      <span class="eyebrow">SEKOLAH MENENGAH KEJURUAN</span>
-      <h1>Mencetak generasi <em>kreatif, terampil</em> dan siap berkarya.</h1>
-      <p>SMK GRAFIKA PGRI PAKIS mengembangkan kompetensi di bidang Desain Komunikasi Visual dan Teknik Grafika dengan pembelajaran berbasis praktik dan dunia kerja.</p>
-      <div class="actions"><a class="btn primary" href="#program">Jelajahi Program</a><a class="btn ghost" href="#kontak">Hubungi Sekolah</a></div>
+      <div class="eyebrow">SEKOLAH MENENGAH KEJURUAN</div>
+
+      <h1>
+        Mencetak Generasi
+        <span>Kreatif & Terampil.</span>
+      </h1>
+
+      <p>
+        SMK GRAFIKA VOKASI MANGLIAWAN hadir untuk mengembangkan
+        kompetensi peserta didik di bidang Teknik Grafika dan
+        Desain Komunikasi Visual dengan pembelajaran berbasis
+        praktik, teknologi dan dunia kerja.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#program">Jelajahi Program</a>
+        <a class="btn btn-ghost" href="#kontak">Hubungi Sekolah</a>
+      </div>
     </div>
-    <div class="hero-card"><div class="orb">G</div><div><b>GRAFIKA VOKASI</b><span>Desain · Cetak · Produksi · Digital</span></div></div>
-  </div>
-</section>
 
-<section id="profil" class="section">
-  <div class="wrap two">
-    <div><span class="eyebrow">TENTANG KAMI</span><h2>Belajar dengan karya nyata.</h2></div>
-    <div><p>SMK GRAFIKA PGRI PAKIS berlokasi di Mangliawan, Pakis, Kabupaten Malang. Sekolah berfokus pada pengembangan keterampilan kreatif, teknologi grafika, desain, produksi, kewirausahaan, dan kesiapan memasuki dunia kerja.</p><p class="muted">Website ini menjadi pusat informasi resmi sekolah dan dapat dikembangkan untuk PPDB/SPMB, BKK, berita, galeri, serta layanan siswa.</p></div>
-  </div>
-</section>
+    <div class="hero-card">
+      <h3>🎓 SMK GRAFIKA VOKASI</h3>
 
-<section id="program" class="section alt">
-  <div class="wrap"><span class="eyebrow">KOMPETENSI KEAHLIAN</span><h2>Pilihan bidang yang relevan dengan industri kreatif.</h2>
-    <div class="cards">
-      <article><div class="icon">✦</div><h3>Desain Komunikasi Visual</h3><p>Desain grafis, branding, ilustrasi, layout, konten digital, dan komunikasi visual.</p></article>
-      <article><div class="icon">▦</div><h3>Teknik Grafika</h3><p>Produksi grafika, cetak, sablon, finishing, penjilidan, kemasan, dan proses produksi.</p></article>
-      <article><div class="icon">↗</div><h3>Kewirausahaan & Dunia Kerja</h3><p>Proyek kreatif, pemasaran digital, praktik kerja lapangan, portofolio, dan kesiapan kerja.</p></article>
+      <div>🖨️ Teknik Grafika</div>
+      <div>🎨 Desain Komunikasi Visual</div>
+      <div>💻 Teknologi & Industri Kreatif</div>
+      <div>🏢 Pembelajaran Berbasis Dunia Kerja</div>
     </div>
+
   </div>
 </section>
 
-<section id="layanan" class="section">
-  <div class="wrap"><span class="eyebrow">LAYANAN SEKOLAH</span><h2>Satu pintu untuk informasi Grafika.</h2>
-    <div class="services">
-      <a href="#"><b>PPDB / SPMB</b><span>Informasi penerimaan peserta didik</span></a>
-      <a href="#"><b>Grafika Presence AI</b><span>Presensi siswa & sekolah berbasis digital</span></a>
-      <a href="#"><b>BKK & Bursa Kerja</b><span>Informasi peluang kerja dan penempatan</span></a>
-      <a href="#"><b>Berita Sekolah</b><span>Kegiatan dan informasi terbaru</span></a>
-    </div>
-  </div>
-</section>
-
-<section id="berita" class="section dark">
-  <div class="wrap two"><div><span class="eyebrow">INFORMASI</span><h2>Website resmi yang siap dikembangkan.</h2></div>
-  <div><p>Konten berita, galeri, pengumuman, agenda sekolah, dan informasi industri dapat ditambahkan tanpa mengubah struktur utama website.</p><a class="btn light" href="#kontak">Lihat Kontak</a></div></div>
-</section>
-
-<section id="kontak" class="section contact">
+<section id="profil" class="about">
   <div class="wrap">
-    <span class="eyebrow">KONTAK</span><h2>SMK GRAFIKA PGRI PAKIS</h2>
-    <div class="contact-grid">
-      <div><b>Alamat</b><p>Jl. Raya Wendit Barat, Perum Mangliawan Permai, Pakis, Kabupaten Malang, Jawa Timur 65154</p></div>
-      <div><b>Email</b><p>smkpgripakisgrafika@gmail.com</p></div>
-      <div><b>Telepon</b><p>0341 791431</p></div>
+
+    <div class="section-title">
+      <span>Tentang Sekolah</span>
+      <h2>Profil SMK GRAFIKA</h2>
+      <p>
+        Pendidikan vokasi untuk menyiapkan generasi yang kreatif,
+        terampil, berkarakter dan siap menghadapi dunia kerja.
+      </p>
+    </div>
+
+    <div class="about-grid">
+
+      <div>
+        <h2>SMK GRAFIKA VOKASI MANGLIAWAN</h2>
+
+        <p>
+          SMK GRAFIKA PGRI PAKIS merupakan sekolah kejuruan
+          yang mengembangkan kompetensi di bidang industri grafika
+          dan ekonomi kreatif.
+        </p>
+
+        <div class="about-box">
+          <strong>Visi</strong>
+          <p>
+            Menjadi lembaga pendidikan vokasi yang menghasilkan
+            lulusan kreatif, kompeten, berkarakter dan siap berkarya.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏫</div>
+        <h3>Identitas Sekolah</h3>
+        <p><strong>Nama:</strong> SMK GRAFIKA PGRI PAKIS</p>
+        <p><strong>Brand:</strong> SMK GRAFIKA VOKASI MANGLIAWAN</p>
+        <p><strong>Wilayah:</strong> Kabupaten Malang</p>
+        <p><strong>Bidang:</strong> Seni & Ekonomi Kreatif</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<footer><div class="wrap"><b>SMK GRAFIKA PGRI PAKIS</b><span>© 2026 · Website Resmi Sekolah</span></div></footer>
-<script src="script.js"></script>
-</body></html>
+<section id="program">
+  <div class="wrap">
+
+    <div class="section-title">
+      <span>Program Keahlian</span>
+      <h2>Belajar Dengan Kompetensi Nyata</h2>
+      <p>
+        Kompetensi yang disiapkan sesuai perkembangan teknologi
+        industri kreatif dan dunia kerja.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">🖨️</div>
+        <h3>Teknik Grafika</h3>
+        <p>
+          Mempelajari proses produksi grafika, percetakan,
+          cetak offset, sablon, finishing, jilid dan kemasan.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Desain Komunikasi Visual</h3>
+        <p>
+          Mengembangkan kemampuan desain, ilustrasi, branding,
+          fotografi, multimedia dan komunikasi visual.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💼</div>
+        <h3>Kewirausahaan</h3>
+        <p>
+          Membekali siswa dengan kreativitas, pemasaran digital,
+          produksi dan kemampuan membangun usaha.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="layanan" class="info">
+  <div class="wrap">
+
+    <div class="section-title">
+      <span>Layanan Digital</span>
+      <h2>Layanan SMK GRAFIKA</h2>
+      <p>
+        Sistem digital untuk mendukung kegiatan sekolah,
+        peserta didik, orang tua dan dunia kerja.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Grafika Presence AI</h3>
+        <p>
+          Sistem presensi digital siswa dan sekolah dengan
+          dukungan teknologi AI dan cloud.
+        </p>
+        <br>
+        <a class="btn btn-primary" href="#" target="_blank">
+          Buka Presensi
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎓</div>
+        <h3>SPMB</h3>
+        <p>
+          Informasi penerimaan dan pendaftaran peserta didik baru
+          SMK GRAFIKA.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💼</div>
+        <h3>BKK & Lowongan Kerja</h3>
+        <p>
+          Informasi peluang kerja, penempatan lulusan,
+          industri dan dunia usaha.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="berita">
+  <div class="wrap">
+
+    <div class="section-title">
+      <span>Informasi Sekolah</span>
+      <h2>Berita & Kegiatan</h2>
+      <p>
+        Informasi terbaru kegiatan pembelajaran dan aktivitas
+        SMK GRAFIKA VOKASI.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">📰</div>
+        <h3>Kegiatan Sekolah</h3>
+        <p>
+          Dokumentasi kegiatan dan informasi terbaru sekolah.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏢</div>
+        <h3>Praktik Dunia Kerja</h3>
+        <p>
+          Kegiatan siswa bersama industri dan dunia usaha.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏆</div>
+        <h3>Prestasi Siswa</h3>
+        <p>
+          Berbagai karya, prestasi dan kreativitas peserta didik.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="bkk" class="about">
+  <div class="wrap">
+
+    <div class="section-title">
+      <span>Bursa Kerja Khusus</span>
+      <h2>BKK SMK GRAFIKA</h2>
+      <p>
+        Menghubungkan lulusan dengan informasi dunia kerja
+        dan kebutuhan industri.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">🔎</div>
+        <h3>Lowongan Kerja</h3>
+        <p>
+          Informasi lowongan kerja dari perusahaan dan industri
+          mitra sekolah.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Kerja Sama Industri</h3>
+        <p>
+          Membangun hubungan dengan dunia usaha dan dunia industri.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>Penempatan Lulusan</h3>
+        <p>
+          Mendukung lulusan agar dapat melanjutkan karier
+          sesuai kompetensi.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="wrap">
+
+    <div class="section-title">
+      <span>Hubungi Kami</span>
+      <h2>Kontak SMK GRAFIKA</h2>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-box">
+        <h3>📍 Alamat Sekolah</h3>
+        <p>
+          Jl. Raya Wendit Barat, Perum Mangliawan Permai,
+          Kecamatan Pakis, Kabupaten Malang, Jawa Timur.
+        </p>
+
+        <p><strong>📞 Telepon:</strong> 0341 791431</p>
+        <p><strong>📱 WhatsApp:</strong> 0838-3449-5750</p>
+      </div>
+
+      <div class="contact-box">
+        <h3>🌐 Ikuti Informasi Kami</h3>
+
+        <p>
+          Dapatkan informasi kegiatan, pendaftaran,
+          karya siswa dan berita sekolah melalui kanal resmi
+          SMK GRAFIKA VOKASI.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="https://wa.me/6283834495750"
+             target="_blank">
+             WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<a class="wa"
+   href="https://wa.me/6283834495750"
+   target="_blank"
+   aria-label="WhatsApp">
+   ☎
+</a>
+
+<footer>
+  <div class="wrap">
+    <strong>SMK GRAFIKA VOKASI MANGLIAWAN</strong>
+    <br>
+    Teknik Grafika • Desain Komunikasi Visual
+    <br><br>
+    © 2026 SMK GRAFIKA PGRI PAKIS. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("active");
+}
+
+document.querySelectorAll("nav a").forEach(function(link){
+  link.addEventListener("click",function(){
+    document.getElementById("nav").classList.remove("active");
+  });
+});
+</script>
+
+</body>
+</html>
