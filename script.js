@@ -11,9 +11,9 @@
 
   const WA_BKK = "6283834495750";
 
-  const FACEBOOK_URL = "https://www.facebook.com/";
-  const INSTAGRAM_URL = "https://www.instagram.com/";
-
+  const FACEBOOK_URL = "https://www.facebook.com/grafikavokasi";
+  const INSTAGRAM_URL = "https://www.instagram.com/grafikavokasi/";
+  const TIKTOK_URL = "https://www.tiktok.com/@grafikapgri";
   /* ===============================
      MENU MOBILE
      =============================== */
@@ -823,6 +823,15 @@ Terima kasih.`;
             >
               INSTAGRAM
             </a>
+            
+            <a
+            href="${TIKTOK_URL}"
+            target="_blank"
+            class="btn btn-primary"
+            style="margin-left:5px;"
+          >
+            TIKTOK
+          </a>
 
           </div>
 
