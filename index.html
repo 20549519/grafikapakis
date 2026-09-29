@@ -14,13 +14,21 @@
 
   <style>
   :root {
-  --primary: #1a56db;
-  --secondary: #1e293b;
-  --accent: #f59e0b;
-  --light: #0b1528;   /* Latar belakang utama */
-  --white: #0f172a;   /* Warna kotak/card */
-  --text: #ffffff;    /* Warna teks utama */
-  --muted: #94a3b8;   /* Warna teks keterangan */
+  --primary: #1a56db !important;
+  --secondary: #1e293b !important;
+  --accent: #f59e0b !important;
+  --light: #0b1528 !important;   /* Latar belakang utama gelap */
+  --white: #0f172a !important;   /* Warna kotak/card */
+  --text: #ffffff !important;    /* Warna teks utama putih */
+  --muted: #94a3b8 !important;   /* Warna teks keterangan */
+}
+
+/* Tambahkan ini di bawah :root untuk memastikan latar belakang berubah total */
+body {
+  background-color: var(--light) !important;
+  color: var(--text) !important;
+}
+
 }
     
 }
